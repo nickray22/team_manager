@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307022720) do
+ActiveRecord::Schema.define(version: 20150307142105) do
 
   create_table "coaches", force: :cascade do |t|
     t.integer "coach_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150307022720) do
     t.string  "gender"
     t.integer "roster_id"
     t.integer "user_id"
+    t.integer "player_id"
   end
 
   create_table "rosters", force: :cascade do |t|
