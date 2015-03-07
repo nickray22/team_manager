@@ -1,13 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user_from_token!
 
   def show
     @user = current_user
-    if @user
-      render json: user_params(@user), status: :created
-    else
-      render json: { messages: @manager.errors.full_messages}, status: :unprocessable_entity
-    end
+    render json: {:user => @user}, status: :created
   end
 
 
