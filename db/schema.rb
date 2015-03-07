@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 20150307170316) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer  "team_id"
     t.datetime "game_day"
     t.datetime "practice"
     t.datetime "date"
     t.boolean  "finish"
+    t.integer  "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
