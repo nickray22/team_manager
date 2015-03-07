@@ -12,6 +12,8 @@
 "user": {
   "email": "you@domain.com",
   "password": "password"
+  "id": id,
+  "type": "Manager"
   }
 ```
 <h5>response</h5>
