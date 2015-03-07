@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307194604) do
+ActiveRecord::Schema.define(version: 20150307223736) do
 
   create_table "leagues", force: :cascade do |t|
     t.integer "team_id"
@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 20150307194604) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer  "team_id"
     t.datetime "game_day"
     t.datetime "practice"
     t.datetime "date"
     t.boolean  "finish"
+    t.integer  "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -61,9 +61,11 @@ ActiveRecord::Schema.define(version: 20150307194604) do
     t.datetime "updated_at"
     t.string   "authentication_token"
     t.string   "type"
-    t.string   "name"
-    t.string   "gender"
-    t.integer  "age"
+    t.string   "player_name"
+    t.string   "players_mother_name"
+    t.string   "players_father_name"
+    t.string   "players_position"
+    t.datetime "players_birthday"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"

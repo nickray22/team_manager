@@ -18,7 +18,7 @@ def ensure_authentication_token
   end
 
   def as_json(opts={})
-    super(:only => [:email, :authentication_token, :id, :type])
+    super(:only => [:email, :authentication_token, :id, :type, :player_name, :players_mother_name, :players_father_name, :players_position, :players_birthday])
   end
 
   private
