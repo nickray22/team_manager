@@ -1,5 +1,6 @@
 class ChangeSchedulesTable < ActiveRecord::Migration
   def change
-    change_column :schedules, :team_id, :integer
+    remove_column :schedules, :team_id
+    add_column :schedules, :team_id, :integer
   end
 end
