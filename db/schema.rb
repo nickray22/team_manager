@@ -11,7 +11,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307012226) do
+ActiveRecord::Schema.define(version: 20150307023110) do
+
+  create_table "coaches", force: :cascade do |t|
+    t.integer "coach_id"
+    t.integer "team_id"
+    t.integer "league_id"
+    t.string  "name"
+    t.integer "user_id"
+  end
+
+  create_table "leagues", force: :cascade do |t|
+    t.integer "league_id"
+    t.integer "team_id"
+    t.string  "name"
+  end
+
+  create_table "managers", force: :cascade do |t|
+    t.integer "manager_id"
+    t.integer "team_id"
+    t.string  "name"
+    t.string  "user_id"
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.integer "parent_id"
+    t.integer "player_id"
+    t.string  "name"
+    t.integer "user_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string  "name"
+    t.integer "age"
+    t.string  "gender"
+    t.integer "roster_id"
+    t.integer "user_id"
+  end
+
+  create_table "rosters", force: :cascade do |t|
+    t.integer "roster_id"
+    t.integer "team_id"
+    t.integer "player_id"
+    t.integer "manager_id"
+  end
+
+# Could not dump table "schedules" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+  create_table "teams", force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "manager_id"
+    t.integer "coach_id"
+    t.integer "parent_id"
+    t.integer "roster_id"
+    t.integer "league_id"
+    t.string  "name"
+    t.string  "sport"
+    t.text    "schedule"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
