@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307023110) do
+ActiveRecord::Schema.define(version: 20150307022720) do
 
   create_table "coaches", force: :cascade do |t|
     t.integer "coach_id"
@@ -56,8 +56,14 @@ ActiveRecord::Schema.define(version: 20150307023110) do
     t.integer "manager_id"
   end
 
-# Could not dump table "schedules" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "schedules", force: :cascade do |t|
+    t.string   "team_id"
+    t.integer  "schedule_id"
+    t.datetime "game_day"
+    t.datetime "practice"
+    t.datetime "date"
+    t.boolean  "finish"
+  end
 
   create_table "teams", force: :cascade do |t|
     t.integer "team_id"
