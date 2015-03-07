@@ -12,7 +12,6 @@
 "user": {
   "email": "you@domain.com",
   "password": "password"
-  "id": id,
   "type": "Manager"
   }
 ```
@@ -24,10 +23,27 @@ creates a new user. returns and authentication token.
 ```json
 {
 "user": {
-    "email": "you@domain.com"
+    "email": "you@domain.com",
+    "authentication-token":  "string",
+    "id": integer,
+    "type": "Manager"
+    
   }
 }
 ```
+<h2> Create Team <h2>
+`POST /teams`
+```json
+{
+"team": {
+  "name": "string",
+  "sport": "string"
+  "coach_name": "string"
+  "homefield": "string"
+  }
+}
+```
+
 error examples:
 `Status: 422 unprocessable_entity`
 
