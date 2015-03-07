@@ -2,9 +2,14 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
 
-  def choose_manager
-    @user = current_user
-    @user = Manager.create(manager_params)
+  def choose
+    @manager = Manager.new(manager_params)
+    @manager.save!
+    if @manager.save
+      render json: { :manager => @manager }, status: :created
+    else
+      render json: { messages: @manager.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   private
@@ -24,3 +29,6 @@ class UsersController < ApplicationController
       params.require(:coach).permit(:coach_id, :team_id, :league_id, :user_id, :name)
     end
 end
+
+
+# a2VCWRtGaSZt3NfykHGa
