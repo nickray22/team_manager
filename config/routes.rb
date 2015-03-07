@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :teams, :only => [:create, :show, :update, :destroy]
-  resources :schedules, => [:create, :show, :update]
+  resources :schedules, :only => [:create, :show, :update]
 
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
