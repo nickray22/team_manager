@@ -18,7 +18,7 @@ def ensure_authentication_token
   end
 
   def as_json(opts={})
-    super(:only => [:email, :authentication_token, :id])
+    super(:only => [:email, :authentication_token, :id, :type])
   end
 
   private
