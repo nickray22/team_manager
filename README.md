@@ -2,7 +2,7 @@
 
 <p>API endpoint: <strong>https://team-managers.herokuapp.com</strong></p>
 
-<h2>Create a User</h2>
+<h2>Create or Show a User</h2>
 
 <h5>Request</h5>
 
@@ -31,7 +31,16 @@ creates a new user. returns and authentication token.
   }
 }
 ```
-<h2> Create Team <h2>
+
+<h5> Request User Profile </h5>
+`GET /users/:id`
+
+```json
+{
+  "authentication_token": "string"
+  }
+```
+<h2> Create Team </h2>
 `POST /teams`
 ```json
 {
