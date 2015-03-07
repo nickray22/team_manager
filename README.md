@@ -52,6 +52,14 @@ creates a new user. returns and authentication token.
   }
 }
 ```
+Showing a team
+`GET /teams/:id`
+
+```json
+{
+  "authentication_token": "string"
+  }
+```
 
 error examples:
 `Status: 422 unprocessable_entity`

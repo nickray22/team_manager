@@ -18,9 +18,7 @@ class TeamsController < ApplicationController
 
   def update
     @team = Team.find(params[:id])
-    binding.pry
     @team.update(team_params)
-    binding.pry
     if @team.save!
       render json: { :team => @team }, status: :ok
     else

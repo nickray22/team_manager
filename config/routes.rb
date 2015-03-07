@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :teams, :only => [:create, :show, :update, :destroy]
   resources :rosters, :only => [:create, :show, :update]
   resources :players, :only => [:create, :show]
+  post '/leagues/add', to: 'leagues#add', as: 'add_teams'
+  resources :leagues
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
