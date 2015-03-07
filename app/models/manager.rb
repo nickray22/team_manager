@@ -1,4 +1,4 @@
-class Manager < ActiveRecord::Base
+class Manager < User
   belongs_to :team
   belongs_to :user
 
