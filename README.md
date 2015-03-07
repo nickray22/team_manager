@@ -1,5 +1,7 @@
 <h1>Team-Managers</h1>
 
+<p>API endpoint: <strong>https://team-managers.herokuapp.com</strong></p>
+
 <h2>Create a User</h2>
 
 <h5>Request</h5>
