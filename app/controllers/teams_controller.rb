@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
-  before_action :authenticate_user_from_token!
+  #before_action :authenticate_user_from_token!
+  skip_before_filter :verify_authentication_token!
 
   def create
     @team = Team.new(team_params)
