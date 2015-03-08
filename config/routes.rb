@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/leagues/add', to: 'leagues#add', as: 'add_teams'
   resources :leagues
   resources :schedules, :only => [:create, :show, :update]
+  get '/email/request', to: 'team_managers#request'
 
   root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
