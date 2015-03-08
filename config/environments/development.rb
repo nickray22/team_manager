@@ -37,7 +37,14 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
+  config.action_mailer.smtp_settings = {
+    :port => 587,
+    :address => "smtp.mandrillapp.com",
+    :user_name => ENV["MANDRILL_USERNAME"],
+    :password => ENV["MANDRILL_APIKEY"],
+    :authentication => :plain
+  }
+  config.action_mailer.delivery_method = :smtp
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
