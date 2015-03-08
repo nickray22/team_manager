@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    render json: {:user => @user}, status: :created
+    @show_teams = Team.where(:user_id).select(current_user.id)
+    render json: {:team => @show_teams}, status: :created
   end
 
 
