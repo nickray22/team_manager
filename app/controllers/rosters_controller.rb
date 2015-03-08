@@ -6,11 +6,11 @@ class RostersController < ApplicationController
   end
 
   def create
-    @player = Player.find(params[:id]) 
     @roster = Roster.new(roster_params)
-    @roster << @player 
+    binding.pry
+    @roster.user_id = current_user.id
     if @roster.save!
-      render json: {:roster => @roster, :roster => @player}, status: :ok
+      render json: {:roster => @roster}, status: :ok
     end
   end
 
@@ -20,6 +20,6 @@ class RostersController < ApplicationController
 
   private
   def roster_params
-    params.require(:user).permit(:id)
+    params.require(:roster).permit(:team_id, :user_id)
   end
 end
