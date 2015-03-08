@@ -8,7 +8,7 @@ class RostersController < ApplicationController
   def create
     @player = Player.find(params[:id]) 
     @roster = Roster.new(roster_params)
-  
+    @roster << @player 
     if @roster.save!
       render json: {:roster => @roster, :roster => @player}, status: :ok
     end

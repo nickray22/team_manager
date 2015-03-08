@@ -6,11 +6,6 @@ class User < ActiveRecord::Base
 
   before_save :ensure_authentication_token
 
-  has_many :players
-  has_many :coaches
-  has_many :managers
-  has_many :parents
-
 def ensure_authentication_token
     if authentication_token.blank?
       self.authentication_token = generate_authentication_token
