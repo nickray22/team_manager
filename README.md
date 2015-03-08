@@ -37,7 +37,7 @@ creates a new user. returns and authentication token.
 
 ```json
 {
-  "authentication_token": "string"
+  "authentication-token": "string"
   }
 ```
 <h2> Create Team </h2>
@@ -57,7 +57,7 @@ Showing a team
 
 ```json
 {
-  "authentication_token": "string"
+  "authentication-token": "string"
   }
 ```
 
