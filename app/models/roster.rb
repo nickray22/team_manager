@@ -1,3 +1,4 @@
 class Roster < ActiveRecord::Base
-  has_many :players, through: :teams
+  has_many :users, through: :teams
+  belongs_to :team
 end
