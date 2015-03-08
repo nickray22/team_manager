@@ -11,11 +11,8 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    binding.pry
     @schedule = Schedule.new(schedule_params)
-    binding.pry
     if @schedule.save!
-      binding.pry
       render json: {:schedule => @schedule}, status: :created
     else
       render status: :unprocessable_entity
@@ -23,10 +20,8 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    binding.pry
     @schedule = Schedule.find(params[:id])
     @schedule.finish = params[:schedule][:finish]
-    binding.pry
     if @schedule.save
 
       render json: {:schedule => @schedule}
