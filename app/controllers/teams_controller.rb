@@ -1,9 +1,9 @@
 class TeamsController < ApplicationController
-  #before_action :authenticate_user_from_token!
-  skip_before_filter :verify_authentication_token!
+  before_action :authenticate_user_from_token!
 
   def create
     @team = Team.new(team_params)
+    binding.pry
     @team.user_id = current_user.id
     if @team.save!
       render json: { :team => @team }, status: :created
